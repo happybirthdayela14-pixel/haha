@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My Love!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="bg-hearts"></div>
+
+    <div class="music-control" onclick="toggleMusic()">🎵</div>
+    <audio id="bg-music" loop>
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <div id="password-screen">
+            <h3>🎁 A Special Surprise For You 🎁</h3>
+            <p>Enter the code to unlock your gift:</p>
+            <p><b>Clue: Your Birthdayyy! :)</b></p>
+            <input type="password" id="secret-code" placeholder="Enter Here: MM/DD/YY">
+            <button class="btn-love" onclick="validatePassword()">Unlock ❤️</button>
+            <p id="error-msg" style="color: #ff4d6d; display: none; margin-top: 10px;">Mali!!! 😘</p>
+        </div>
+
+        <div id="lock-screen" style="display: none;" onclick="openGift()">
+            <div class="envelope-wrapper">
+                <p><center>Password Accepted!</center></p>
+                <div class="envelope"><center>🎁</center></div>
+                <p class="hint">(Tap the gift to proceed!)</p>
+            </div>
+        </div>
+
+        <div id="birthday-overlay" style="display: none;">
+    <div class="overlay-content">
+        <h1 class="big-text">HAPPY BIRTHDAY<br>ELA MY LOVE! 🎂❤️</h1>
+        <p>Tap anywhere to continue...</p>
+    </div>
+</div>
+
+        <div id="main-content" style="display: none;">
+            
+            <div id="part-1" class="content-step">
+                <h1>For My Favorite Person</h1>
+                <div class="hug-section">
+                    <button class="btn-hug" onclick="sendHug()">Send a Virtual Hug 🫂</button>
+                    <p id="hug-count">Hugs sent today: 0</p>
+                </div>
+                <hr class="divider">
+                <h1>Scratch for a Surprise!</h1>
+                <div class="scratch-container" onclick="revealScratch()">
+                    <div id="scratch-overlay">Tap to Scratch! ✨</div>
+                    <div id="scratch-content">
+                        <p><strong>A Dinner Date on Me!</strong> 🎫</p>
+                        <p style="font-size: 0.8rem;">(Valid when we see each other soon)</p>
+                    </div>
+                </div>
+                <button class="btn-next" onclick="showPart(2)">Next: Read My Letter ✉️</button>
+            </div>
+
+            <div id="part-2" class="content-step" style="display: none;">
+                <div class="letter-content">
+                    <h1 style="font-family: 'Dancing Script', cursive; color: #ff4d6d;">Hi, My Love...</h1>
+                    <p>here ko tatype message...</p>
+                    <p>Happy Birthday ELAAA!</p>
+                </div>
+                <button class="btn-next" onclick="showPart(3)">Next: Our Memories 📸</button>
+            </div>
+
+            <div id="part-3" class="content-step" style="display: none;">
+                <h1><center>Our Memories</center></h1>
+                <p><center>PS: Puro pic mo wala kasi us pic huhu</center></p>
+                <div class="gallery">
+                    <div class="photo-frame"><img src="photo1.jpg" alt="Us"></div>
+                    <div class="photo-frame"><img src="photo2.jpg" alt="Us"></div>
+                    <div class="photo-frame"><img src="photo3.jpg" alt="Us"></div>
+                    <div class="photo-frame"><img src="photo4.jpg" alt="Us"></div>
+                </div>
+
+                <div class="love-generator">
+                    <h3>Reasons Why I Love You</h3>
+                    <div id="reason-text">Click below...</div>
+                    <button class="btn-love" onclick="generateReason()">Reveal ❤️</button>
+                </div>
+                <button class="btn-next" onclick="showPart(4)">The Last Surprise... 🎂</button>
+            </div>
+
+            <div id="part-4" class="content-step" style="display: none;">
+                <div class="candle-count-display">Make a Wish!</div>
+                <div class="cake">
+                    <div class="plate"></div>
+                    <div class="layer layer-bottom"></div>
+                    <div class="layer layer-middle"></div>
+                    <div class="layer layer-top"></div>
+                    <div class="icing"></div>
+                    <div class="drip drip1"></div>
+                    <div class="drip drip2"></div>
+                    <div class="drip drip3"></div>
+                    </div>
+                <p style="text-align: center; color: var(--primary); font-weight: bold; margin-top: 20px;">
+                    Tap the cake to add more candles!
+                </p>
+                <p style="text-align: center; color: var(--primary); font-weight: bold; margin-top: 20px;">
+                    Blow on your microphone to blow the candles! 🎤
+                </p>
+                <button class="btn-next" onclick="showPart(1)">Restart 🔄</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
